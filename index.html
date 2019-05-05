@@ -22,6 +22,7 @@
 
     <div class="share_button">
         <button type="button" onclick="btnClick()">Download</button>
+        <a href=”fb-messenger://share/?link= https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fsharing%2Freference%2Fsend-dialog&app_id=123456789”>Send In Messenger</a>
     </div>
 </div>
 <script src="html2canvas.js"></script>
@@ -35,13 +36,14 @@
                 a.href = canvas.toDataURL("image/jpeg").replace("image/jpeg", "image/octet-stream");
                 a.download = 'eidcard.jpg';
                 a.click();
-
             }
         });
         document.querySelector('.prev').style.display = "none";
         document.querySelector('.next').style.display = "none";
         document.querySelector('.share_button').style.display = "none";
     }
+
+    window.open('fb-messenger://share?link=' + encodeURIComponent(link) + '&app_id=' + encodeURIComponent(app_id));
 </script>
 </body>
 </html>
